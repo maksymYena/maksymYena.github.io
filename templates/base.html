@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="/static/main.css">
+</head>
+
+<body>
+  {% block body %}{% endblock %}
+
+  <div class="footer-text">Last updated: {{ site.time.strftime("%Y-%m-%d") }} / No frames / No JavaScript</div>
+  <div class="footer-text">Website analytics by <a href="https://www.goatcounter.com" target="_blank">GoatCounter</a></div>
+  <img src="https://mxp.goatcounter.com/count?p={{ site.current_url }}" alt="" width="1" height="1">
+</body>
+
+</html>

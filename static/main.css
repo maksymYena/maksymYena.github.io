@@ -1,0 +1,323 @@
+:root {
+   --color-bg: #DDC5A2;
+  --color-text: #333333;
+  --color-title: #004080;
+  --color-link: #0066cc;
+  --color-link-hover: #FFDD57;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-hover: rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #2E3440;
+    --color-text: #ECEFF4;
+    --color-title: #81A1C1;
+    --color-link: #8FBCBB;
+    --color-link-hover: #5E81AC;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --shadow-hover: rgba(0, 0, 0, 0.7);
+  }
+}
+
+html, body {
+    background: linear-gradient(135deg, #DDC5A2, #B6452C);
+  color: var(--color-text);
+  font-family: 'Courier New', monospace;
+  margin: 0 auto;
+  max-width: 960px;
+  line-height: 1.6;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+/* HEADER TITLE */
+.header__title {
+  color-title: #003366;
+  font-size: 2.8em;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 4px solid var(--color-title);
+  text-shadow: 2px 2px 4px var(--shadow);
+}
+
+/* SECTIONS - GLASSMORPHISM */
+.section {
+  margin: 30px 0;
+  padding: 20px;
+  background: rgba(188, 143, 143, 0.3); /
+  border: 1px solid rgba(139, 69, 19, 0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 12px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow-hover);
+}
+
+/* PROJECT CARDS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  background: var(--color-link-hover);
+  color: var(--color-bg);
+  transform: scale(1.05);
+}
+
+/* RESEARCH PROFILES */
+.profiles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.profile-card {
+  text-align: center;
+  padding: 20px;
+  width: 260px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow);
+  backdrop-filter: blur(10px);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  background: var(--color-link-hover);
+  color: var(--color-bg);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow-hover);
+}
+
+.profile-icon {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 10px 0;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 -4px 8px var(--shadow);
+}
+
+.footer a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+.footer img {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.footer img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .projects-grid, .profiles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card, .project-card {
+    width: 100%;
+  }
+}
+
+/* RESUME PAGE STYLES */
+.resume-page {
+  margin: 40px 0;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 16px var(--shadow);
+  transition: all 0.3s ease-in-out;
+}
+
+.resume-page:hover {
+  box-shadow: 0 12px 24px var(--shadow-hover);
+  transform: translateY(-5px);
+}
+
+/* HEADINGS ON RESUME PAGE */
+.resume-page h2 {
+  font-size: 1.8em;
+  color: var(--color-title);
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px var(--shadow);
+}
+
+.resume-page ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-page ul li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resume-page ul li::before {
+  font-size: 1.2em;
+  color: #4caf50;
+}
+
+
+/* SOFT SKILLS SECTION */
+.soft-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.soft-skills-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.soft-skills-item span {
+  font-weight: bold;
+  min-width: 150px;
+  display: inline-block;
+}
+
+.soft-skills-item p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Resume subpage */
+
+a.resume-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-link);
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+a.resume-link:hover {
+  background-color: var(--color-link-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+a.resume-link:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Project related styles */
+.all-projects-link {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.projects-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-link);
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.projects-link:hover {
+  background-color: var(--color-link-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.projects-link:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Back to Main Page Button */
+.back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Back to Main Page Button */
+.back-to-main-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-link);
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.back-to-main-btn:hover {
+  background-color: var(--color-link-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-main-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
