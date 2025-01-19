@@ -95,7 +95,7 @@ def blog_post(slug):
 
 
 @app.route('/resume/')
-def resume_index():
+def resume():
     return render_template('resume.html')
 
 

@@ -27,8 +27,7 @@ def blog_post():
 
 @freezer.register_generator
 def resume():
-    for post in Content.get():
-        yield {'slug': post['slug']}
+    yield {}
 
 
 if __name__ == '__main__':
